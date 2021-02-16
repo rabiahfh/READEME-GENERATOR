@@ -25,9 +25,26 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: "What's the name of your project?",
+        message: "What's the title of your project?",
+        validate: (value)=>{ if (value){return true} else {return 'I need a value to continue'}}
+
+      },
+      {
+        type: 'input',
+        name: 'installation',
+        message: "How do you install your app?",
+        validate: (value)=>{ if (value){return true} else {return 'I need a value to continue'}}
+
+      },
+      {
+        type: 'input',
+        name: 'instruction',
+        message: "What are the instructions to be followed?",
+        validate: (value)=>{ if (value){return true} else {return 'I need a value to continue'}}
+
       }
-];
+    ]
+    
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -44,8 +61,12 @@ function init() {
     .prompt(questions)
     .then(answers => {
       // Use user feedback for... whatever!!
-      writeToFile("string.md", answers.title)
-      console.log(answers.title)
+      writeToFile("string.md",answers.title)
+    })
+    .then(answers => {
+        // Use user feedback for... whatever!!
+        writeToFile("string.md", answers.installation)
+    //   console.log(answers)
     })
     .catch(error => {
       if(error.isTtyError) {
