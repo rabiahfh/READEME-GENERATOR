@@ -22,27 +22,65 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 // TODO: Create an array of questions for user input
 const questions = [
-    {
-        type: 'input',
-        name: 'title',
-        message: "What's the title of your project?",
-        validate: (value)=>{ if (value){return true} else {return 'I need a value to continue'}}
-
-      },
-      {
-        type: 'input',
-        name: 'installation',
-        message: "How do you install your app?",
-        validate: (value)=>{ if (value){return true} else {return 'I need a value to continue'}}
-
-      },
-      {
-        type: 'input',
-        name: 'instruction',
-        message: "What are the instructions to be followed?",
-        validate: (value)=>{ if (value){return true} else {return 'I need a value to continue'}}
-
-      }
+    {   
+        // enter my project title
+        type: "input",
+        message: "What is the name of the project?",
+        name: "title"
+    },
+    { 
+        // Table of Contents
+        type: "input",
+        message: "Please provide a table on content",
+        name: "table of content"
+    },
+    {   
+        type: "input",
+        message: "What is the name of the user?",
+        name: "userName"
+    },
+    {  type: "input",
+        message: "Please provide a description of the project",
+        name: "description"
+    },
+    { 
+        //  Installation
+         type: "input",
+        message: "What is the installation process?",
+        name: "installation"
+    },
+    {  
+        // Usage 
+        type: "input",
+        message: "How will this project be used?",
+        name: "usage"
+    },
+    {   
+        // list of license
+        type: "list",
+        message: "What licenses are required with this project?",
+        name: "license",
+        choices: ['The MIT license', 'The GPL license', 'Apache license', 'The GNU license', 'N/A']
+    },
+    {    // list of contributors
+        type: "input",
+        message: "Who were the contributors to this project?",
+        name: "contribution"
+    },
+    {    
+        // Tests
+        type: "input" ,
+        message: "What is the test process for this project?",
+        name: "test"
+    },
+    {     type: "input",
+        message: "What is the user github email address?",
+        name: "GitHub user email"
+    },
+    {     type: "input",
+        message: "Please provide a profile picture",
+        name: "GitHub profile picture"
+    }
     ]
     
 
