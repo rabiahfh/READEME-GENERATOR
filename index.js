@@ -20,8 +20,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const axios = require('axios');
 // TODO: Create an array of questions for user input
-const questions = [
+inquirer.prompt(questions){[
     {   
         // enter my project title
         type: "input",
@@ -32,7 +33,7 @@ const questions = [
         // Table of Contents
         type: "input",
         message: "Please provide a table on content",
-        name: "table of content"
+        name: "tableOfContent"
     },
     {   
         type: "input",
@@ -75,13 +76,12 @@ const questions = [
     },
     {     type: "input",
         message: "What is the user github email address?",
-        name: "GitHub user email"
+        name: "Email"
     },
-    {     type: "input",
-        message: "Please provide a profile picture",
-        name: "GitHub profile picture"
-    }
-    ]
+    
+]}
+.then(answers => {
+  const {title, table}=answers
     
 
 // TODO: Create a function to write README file
@@ -99,20 +99,25 @@ function init() {
     .prompt(questions)
     .then(answers => {
       // Use user feedback for... whatever!!
-      writeToFile("string.md",answers.title)
-    })
-    .then(answers => {
-        // Use user feedback for... whatever!!
-        writeToFile("string.md", answers.installation)
-    //   console.log(answers)
-    })
-    .catch(error => {
-      if(error.isTtyError) {
-        // Prompt couldn't be rendered in the current environment
-      } else {
-        // Something else when wrong
-      }
+      const title =`# ${answers.title}
+    
+     
+      
+      ${answers.username}
+      ##username:
+      `
+      console.log(answers)
+      writeToFile("string.md",title)
+
     });
+    
+    // .catch(error => {
+    //   if(error.isTtyError) {
+    //     // Prompt couldn't be rendered in the current environment
+    //   } else {
+    //     // Something else when wrong
+    //   }
+    // });
 
 }
 
