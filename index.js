@@ -20,30 +20,20 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const axios = require('axios');
+const generateMarkdown = require('./utils/generateMarkdown');
+
 // TODO: Create an array of questions for user input
-inquirer.prompt(questions){[
+const questions= [
     {   
         // enter my project title
         type: "input",
         message: "What is the name of the project?",
         name: "title"
     },
-    { 
-        // Table of Contents
-        type: "input",
-        message: "Please provide a table on content",
-        name: "tableOfContent"
-    },
-    {   
-        type: "input",
-        message: "What is the name of the user?",
-        name: "userName"
-    },
     {  type: "input",
-        message: "Please provide a description of the project",
-        name: "description"
-    },
+    message: "Please provide a description of the project",
+    name: "description"
+},
     { 
         //  Installation
          type: "input",
@@ -56,13 +46,7 @@ inquirer.prompt(questions){[
         message: "How will this project be used?",
         name: "usage"
     },
-    {   
-        // list of license
-        type: "list",
-        message: "What licenses are required with this project?",
-        name: "license",
-        choices: ['The MIT license', 'The GPL license', 'Apache license', 'The GNU license', 'N/A']
-    },
+   
     {    // list of contributors
         type: "input",
         message: "Who were the contributors to this project?",
@@ -74,23 +58,32 @@ inquirer.prompt(questions){[
         message: "What is the test process for this project?",
         name: "test"
     },
-    {     type: "input",
+    {   
+        // list of license
+        type: "list",
+        message: "What licenses are required with this project?",
+        name: "license",
+        choices: ['The MIT license', 'The GPL license', 'Apache license 2.0', 'The GNU license']
+    },
+    {  
+          // user name 
+        type: "input",
+        message: "What is the name of the user?",
+        name: "userName"
+    },
+    {     // github email
+          type: "input",
         message: "What is the user github email address?",
         name: "Email"
     },
     
-]}
-.then(answers => {
-  const {title, table}=answers
-    
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, 'utf8', (err) => {
+]
+    function writeToFile(fileName,data)  {
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
       })  
-}
+    }
 
 // TODO: Create a function to initialize app
 function init() {
@@ -99,15 +92,7 @@ function init() {
     .prompt(questions)
     .then(answers => {
       // Use user feedback for... whatever!!
-      const title =`# ${answers.title}
-    
-     
-      
-      ${answers.username}
-      ##username:
-      `
-      console.log(answers)
-      writeToFile("string.md",title)
+         writeToFile("README-GEN.md",answers)
 
     });
     
