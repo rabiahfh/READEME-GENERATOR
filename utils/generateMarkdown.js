@@ -40,19 +40,15 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   switch (license) {
     case 'The MIT license':
-      return `## License 
-      [License](https://choosealicense.com/licenses/mit/) \n`
+      return `\n ## License\nTo view the license click [here](https://choosealicense.com/licenses/mit/)\n`
         ;
     case 'The GPL license':
-      return `## License 
-      [License](https://choosealicense.com/licenses/gpl-3.0/) \n`
+      return `\n ## License\nTo view the license click [here](https://choosealicense.com/licenses/gpl-3.0/) \n`
         ;
     case 'Apache license 2.0':
-      return `## License 
-      [License](https://choosealicense.com/licenses/apache-2.0/) \n`
+      return `\n ## License\nTo view the license click [here](https://choosealicense.com/licenses/apache-2.0/) \n`
     case 'The GNU license':
-      return `## License 
-      [License](https://choosealicense.com/licenses/agpl-3.0/) \n`
+      return `\n ## License\nTo view the license click [here](https://choosealicense.com/licenses/agpl-3.0/)\n`
         ;
     default:
       return '';
@@ -63,15 +59,21 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
-    ${data.description}
-  # ${data.installation}
-  # ${data.usage}
-   # ${data.contribution}
-  # ${data.test}
-  ${renderLicenseLink(data.license)}
-  # ${data.userName}
-  # ${data.Email}
+  \n ${renderLicenseBadge(data.license)}
+  \n ${data.description} 
+  \n ## Installation
+  \n ${data.installation}
+  \n ## Usage
+  \n ${data.usage}
+  \n ${renderLicenseSection(data.license)}
+  \n ## Contributors
+  \n ${data.contribution}
+  \n ## Testing
+  \n ${data.test}
+  \n ## Questions
+  \n If you want have any additional questions, you can reach me at
+  \n **Github**: https://github.com/${data.userName}
+  \n **Email**: ${data.Email}
 `;
 }
 
