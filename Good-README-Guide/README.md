@@ -17,6 +17,7 @@ If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https:/
 If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
 
 
+
 ## Table of Contents (Optional)
 
 If your README is very long, add a table of contents to make it easy for users to find what they need.
@@ -73,7 +74,7 @@ If your project has a lot of features, consider adding a heading called "Feature
 
 ## Contributing
 
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributgit add .or-covenant.org/) is an industry standard, but you can always write your own.
 
 ## Tests
 
