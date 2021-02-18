@@ -61,6 +61,13 @@ function generateMarkdown(data) {
   return `# ${data.title}
   \n ${renderLicenseBadge(data.license)}
   \n ${data.description} 
+  \n ## Table of Contents
+  \n* [Installation](#Installation)
+  \n* [Usage](#Usage)
+  \n* [License](#License)
+  \n* [Contributors](#Contributors)
+  \n* [Tests](#Tests)
+  \n* [Questions](#Questions)
   \n ## Installation
   \n ${data.installation}
   \n ## Usage
