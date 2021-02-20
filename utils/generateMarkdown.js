@@ -72,6 +72,7 @@ function generateMarkdown(data) {
   \n ${data.description}
   \n ## Installation
   \n ${data.installation}
+  \n* [init]
   \n ## Usage
   \n ${data.usage}
   \n ${renderLicenseSection(data.license)}
