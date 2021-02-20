@@ -33,14 +33,14 @@ const questions= [
         name: "usage"
     },
    
-    {    // list of contributors
+    {    // list of contribution guidelines
         type: "input",
-        message: "Who were the contributors to this project?",
+        message: "What are the contribution guidelines to this project?",
         name: "contribution"
     },
     {    
         // Tests
-        type: "input" ,
+       type: "input" ,
         message: "What is the test process for this project?",
         name: "test"
     },
@@ -52,11 +52,6 @@ const questions= [
         choices: ['The MIT license', 'The GPL license', 'Apache license 2.0', 'The GNU license']
     },
     // {  
-    //       // user name 
-    //     type: "input",
-    //     message: "What is the name of the user?",
-    //     name: "userName"
-    // },
     {     // github address
           type: "input",
         message: "What is the github user name?",
