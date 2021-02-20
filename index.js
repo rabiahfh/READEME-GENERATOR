@@ -1,7 +1,4 @@
-// ## Acceptance Criteria
 
-// ```md
-// -THEN I am taken to the corresponding section of the README
 
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
