@@ -1,4 +1,4 @@
-# gh
+# f
   
  ![License](https://img.shields.io/badge/license-MIT-red) 
 
@@ -21,15 +21,19 @@
   
  ## Description
   
- j
+ f
   
  ## Installation
   
- n
+ 
   
+* npm init
+  
+* npm install inquirer
+    
  ## Usage
   
-  m
+ f
   
  
  ## License
@@ -38,11 +42,11 @@ To view the license click [here](https://choosealicense.com/licenses/mit/)
   
  ## Contributors
   
- ,
+ f
   
  ## Testing
   
- ;
+ f
   
  ## Questions
   
