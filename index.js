@@ -47,7 +47,7 @@ const questions= [
     {   
         // list of license
         type: "list",
-        message: "What licenses are required with this project?",
+        message: "What licenses are required with this project?, (PRESS: up or down arrow to scroll and enter key to select)",
         name: "license",
         choices: ['The MIT license', 'The GPL license', 'Apache license 2.0', 'The GNU license']
     },
@@ -77,7 +77,7 @@ function init() {
     .prompt(questions)
     .then(answers => {
       // Use user feedback for... whatever!!
-         writeToFile("README.md",answers)
+         writeToFile("GENERATED_README.md",answers)
 
     });
     

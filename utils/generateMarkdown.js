@@ -71,7 +71,7 @@ function generateMarkdown(data) {
   \n ## Description
   \n ${data.description}
   \n ## Installation
-  \n ${data.installation}
+  \n 💾 ${data.installation}
   \n* npm init
   \n* npm install inquirer
     \n ## Usage
