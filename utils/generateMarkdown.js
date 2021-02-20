@@ -14,8 +14,6 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
   switch (license) {
     case 'The MIT license':
@@ -71,12 +69,7 @@ function generateMarkdown(data) {
   \n ## Description
   \n ${data.description}
   \n ## Installation
-  \n 💾 ${data.installation}
-  \n* npm init
-  \n* npm install inquirer
-    \n ## Usage
-  \n ${data.usage}
-  \n ${renderLicenseSection(data.license)}
+  \n ${data.installation}
   \n ## Contributors
   \n ${data.contribution}
   \n ## Testing
